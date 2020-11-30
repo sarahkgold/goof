@@ -1,0 +1,17 @@
+version: '2.1'
+orbs:
+  snyk: snyk/snyk@0.0.12
+jobs:
+  build:
+    docker:
+      - image: 'circleci/node:4.8.2'
+    steps:
+      - checkout
+      - run: npm install -q
+      - snyk/scan:
+         fail-on-issues: false
+         monitor-on-build: true
+         project: 'goof/circle-ci-project-setup-app'
+         severity-threshold: high
+         token-variable: SnykAuth
+workflows: null
