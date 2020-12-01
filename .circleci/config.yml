@@ -13,5 +13,5 @@ jobs:
          monitor-on-build: true
          project: 'goof/circle-ci-project-setup-app'
          severity-threshold: high
-         token-variable: SnykAuth
+         token-variable: SNYK_TOKEN
 workflows: null
